@@ -9,6 +9,9 @@ const LogoutButton = () => {
     remove.token();
     remove.username();
     remove.role();
+    remove.companyId();
+    remove.companyName();
+    remove.id();
     navigate("/");
   };
 

@@ -19,6 +19,7 @@ export default function TransactionTable({ transactions }) {
             .setZone("Asia/Kolkata")
             .toFormat("dd LLL yyyy, hh:mm a"),
       },
+      { Header: "Invoice No.", accessor: "INVOICE_NO" },
       { Header: "Type", accessor: "TRANSACTION_TYPE" },
       { Header: "Category", accessor: "CATEGORY_NAME" },
       { Header: "Description", accessor: "DESCRIPTION" },

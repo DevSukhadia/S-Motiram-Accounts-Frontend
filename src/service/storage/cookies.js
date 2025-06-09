@@ -2,6 +2,7 @@
 const EXPIRY_TIME_MS = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
 
 const token = "token";
+const id = "id"; // Not used in this example, but kept for consistency
 const username = "username";
 const role = "role";
 const companyId = "companyId";
@@ -38,6 +39,7 @@ function getItemWithExpiry(key) {
 const save = {
     token: (value) => setItemWithExpiry(token, value),
     username: (value) => setItemWithExpiry(username, value),
+    id: (value) => setItemWithExpiry(id, value),
     role: (value) => setItemWithExpiry(role, value),
     companyId: (value) => setItemWithExpiry(companyId, value),
     companyName: (value) => setItemWithExpiry(companyName, value),
@@ -46,6 +48,7 @@ const save = {
 const remove = {
     token: () => localStorage.removeItem(token),
     username: () => localStorage.removeItem(username),
+    id: () => localStorage.removeItem(id),
     role: () => localStorage.removeItem(role),
     companyId: () => localStorage.removeItem(companyId),
     companyName: () => localStorage.removeItem(companyName),
@@ -55,6 +58,7 @@ const get = {
     token: () => getItemWithExpiry(token),
     username: () => getItemWithExpiry(username),
     role: () => getItemWithExpiry(role),
+    id: () => getItemWithExpiry(id),
     companyId: () => getItemWithExpiry(companyId),
     companyName: () => getItemWithExpiry(companyName),
 };

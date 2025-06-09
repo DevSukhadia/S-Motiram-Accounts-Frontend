@@ -120,7 +120,6 @@ const [toDate, setToDate] = useState(lastOfMonth.toLocaleDateString('sv-SE'));
         ]}
       />
       </div>
-
       {filteredTransactions.length === 0 ? (
         <p>No transactions match the selected filters.</p>
       ) : (
