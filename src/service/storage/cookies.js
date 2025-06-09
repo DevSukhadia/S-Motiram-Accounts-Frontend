@@ -4,6 +4,8 @@ const EXPIRY_TIME_MS = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
 const token = "token";
 const username = "username";
 const role = "role";
+const companyId = "companyId";
+const companyName = "companyName";
 
 // Helper to save an item with expiry
 function setItemWithExpiry(key, value) {
@@ -37,18 +39,24 @@ const save = {
     token: (value) => setItemWithExpiry(token, value),
     username: (value) => setItemWithExpiry(username, value),
     role: (value) => setItemWithExpiry(role, value),
+    companyId: (value) => setItemWithExpiry(companyId, value),
+    companyName: (value) => setItemWithExpiry(companyName, value),
 };
 
 const remove = {
     token: () => localStorage.removeItem(token),
     username: () => localStorage.removeItem(username),
     role: () => localStorage.removeItem(role),
+    companyId: () => localStorage.removeItem(companyId),
+    companyName: () => localStorage.removeItem(companyName),
 };
 
 const get = {
     token: () => getItemWithExpiry(token),
     username: () => getItemWithExpiry(username),
     role: () => getItemWithExpiry(role),
+    companyId: () => getItemWithExpiry(companyId),
+    companyName: () => getItemWithExpiry(companyName),
 };
 
 const isLoggedIn = () => !!get.token();

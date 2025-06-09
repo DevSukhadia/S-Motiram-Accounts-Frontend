@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../service/API"; // Make sure this path is correct
+import API from "../service/API";
+import { save } from "../service/storage/cookies";
 
 export default function CompanyTable() {
   const [companies, setCompanies] = useState([]);
@@ -17,7 +18,9 @@ export default function CompanyTable() {
   };
 
   // Navigate to accounts page
-  const goToAccounts = (companyId) => {
+  const goToAccounts = (companyId, companyName) => {
+    save.companyId(companyId); // Store in cookies
+    save.companyName(companyName); // Store company name in cookies
     navigate(`/account`);
   };
 
@@ -38,7 +41,7 @@ export default function CompanyTable() {
             <td>
               <button
                 className="btn"
-                onClick={() => goToAccounts(company.COMPANY_ID)}
+                onClick={() => goToAccounts(company.COMPANY_ID, company.COMPANY_NAME)}
               >
                 {company.COMPANY_NAME}
               </button>
