@@ -3,6 +3,8 @@ import ProtectedRoute from "./components/ProtectedRoute.js";
 import Dashboard from "./pages/Dashboard.js";
 import Login from "./pages/Login.js";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Users from "./pages/Users.js";
+import Account from "./pages/Account.js";
 
 function App() {
   return (
@@ -13,6 +15,22 @@ function App() {
         element={
           <ProtectedRoute>
             <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/users"
+        element={
+          <ProtectedRoute>
+            <Users />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/account"
+        element={
+          <ProtectedRoute>
+            <Account />
           </ProtectedRoute>
         }
       />

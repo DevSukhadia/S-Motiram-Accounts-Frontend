@@ -60,7 +60,6 @@ const CreateUserForm = () => {
 
     try {
       await createUser(formData); // Assuming createUser is a function that handles the API call
-      // await API.post("/users", formData);
       alert("User created successfully!");
       setFormData({
         username: "",
